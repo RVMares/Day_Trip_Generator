@@ -13,3 +13,8 @@ def random_restaurant():
     print ('Get ready for some good food!')
     print (random.choice(restaurants))
 
+def random_transportation():
+    print ('Generating Mode of Transportation...')
+    print (random.choice(transportation))
+
+
