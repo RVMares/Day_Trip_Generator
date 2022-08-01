@@ -11,23 +11,29 @@ import random
 
 def random_destination():
     print ('Your destination is generating...')
-    print(random.choice(destinations))
+    final_destination = input('I have selected ' + (random.choice(destinations)) + ' as your destination. Does this sound good? Enter y/n: ')
+    if final_destination == 'y':
+        print ('Great! Let\'s continue!')
+    else:
+        print ('That is okay. Let\'s try something else.')
+        random_destination()
+ 
 
-def random_restaurant():
-    print ('Get ready for some good food!')
-    print (random.choice(restaurants))
+# def random_restaurant():
+#     print ('Get ready for some good food!')
+#     print (random.choice(restaurants))
 
-def random_transportation():
-    print ('Generating Mode of Transportation...')
-    print (random.choice(transportation))
+# def random_transportation():
+#     print ('Generating Mode of Transportation...')
+#     print (random.choice(transportation))
 
-def random_entertainment():
-    print('Generating your entertainment for today...')
-    print (random.choice(entertainment))
+# def random_entertainment():
+#     print('Generating your entertainment for today...')
+#     print (random.choice(entertainment))
 
-def day_trip_generator():
-    random_destination()
-    random_restaurant()
-    random_transportation()
-    random_entertainment()
-day_trip_generator()
+# def day_trip_generator():
+#     random_destination()
+#     random_restaurant()
+#     random_transportation()
+#     random_entertainment()
+# day_trip_generator()
