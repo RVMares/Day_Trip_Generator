@@ -17,4 +17,8 @@ def random_transportation():
     print ('Generating Mode of Transportation...')
     print (random.choice(transportation))
 
+def random_entertainment():
+    print('Generating your entertainment for today...')
+    print (random.choice(entertainment))
+
 
