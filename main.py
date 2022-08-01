@@ -9,3 +9,7 @@ def random_destination():
     print ('Your destination is generating...')
     print(random.choice(destinations))
 
+def random_restaurant():
+    print ('Get ready for some good food!')
+    print (random.choice(restaurants))
+
