@@ -21,4 +21,9 @@ def random_entertainment():
     print('Generating your entertainment for today...')
     print (random.choice(entertainment))
 
-
+def day_trip_generator():
+    random_destination()
+    random_restaurant()
+    random_transportation()
+    random_entertainment()
+day_trip_generator()
