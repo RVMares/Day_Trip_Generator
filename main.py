@@ -1,10 +1,10 @@
 destinations = ['Manitou Springs', 'Breckenridge', 'Denver']
 restaurants_Manitou_Springs = ['Iron Chateau', 'Border Burger Bar', 'Manitou Brewing Company', 'Mo\'s Diner & Lounge', 'The Mason Jar', 'Pizzeria Rustica']
-entertainment_Manitou_Springs = ['Santa\'s Workshop', 'River Running', 'Colorado Wolf and Wildlife Center', 'Garden of the Gods', 'The Incline', 'Western Museum of Mining and Industry', 'Miramont Castle']
+entertainment_Manitou_Springs = ['playing at Santa\'s Workshop', 'going River Running', 'touring the Colorado Wolf and Wildlife Center', 'sight seeing at Garden of the Gods', 'hiking The Incline', 'touring the Western Museum of Mining and Industry', 'touring Miramont Castle']
 restaurants_Breckenridge = ['Hearthstone', 'Piante Pizzeria', 'Twist', 'Relish', 'Aurum Food and Wine', 'Mountain Flying Fish']
-entertainment_Breckenridge = ['Breckenridge Ski Resort', 'Rafting', 'Shopping on Main Street', 'Country Boy Mine', 'Visit Isak the Breckenridge Troll', 'Edwin Carter Museum and Park', 'Breckenridge Theater presenting "\The Play That Goes Wrong\"']
+entertainment_Breckenridge = ['skiing at Breckenridge Ski Resort', 'rafting', 'shopping on Main Street', 'exploring  the Country Boy Mine', 'visiting Isak the Breckenridge Troll', 'touring the Edwin Carter Museum and Park', 'visiting the Breckenridge Theater presenting "\The Play That Goes Wrong\"']
 restaurants_Denver = ['The Poke House', 'Apple Blossom', 'Chez Maggy', 'A5 Steakhouse', 'Toro Latin Kitchen', 'Cantina Loca', 'Glo Noodle House', 'Jax Fish House']
-entertainment_Denver = ['16th Street Mall', 'Larimer Square', 'Meow Wolf Denver', 'Colorado Railroad Museum', 'Elitch Gardens Theme and Water Park', 'Denver Zoo', 'Denver Museum of Nature and Science', 'Jurassic World: The Exhibition']
+entertainment_Denver = ['shopping at the 16th Street Mall', 'sight seeing at Larimer Square', 'exploring Meow Wolf Denver', 'touring the Colorado Railroad Museum', 'playing at Elitch Gardens Theme and Water Park', 'seeing animals at the Denver Zoo', 'learning at the Denver Museum of Nature and Science', ' exploring Jurassic World: The Exhibition']
 transportation = ['Train', 'Rental Car', 'Bicycle', 'RTD Rail', 'Uber', 'Taxi', 'Rental Scooter']
 
 import random
@@ -44,8 +44,10 @@ def final_restaurant():
 
 
 def random_transportation():
+    global chosen_transportation
+    chosen_transportation = (random.choice(transportation))
     print ('Generating Mode of Transportation...')
-    final_transportation = input('I have selected ' + (random.choice(transportation)) + ' as your mode of transportation. Does this sound good? Enter y/n: ')
+    final_transportation = input('I have selected ' + chosen_transportation + ' as your mode of transportation. Does this sound good? Enter y/n: ')
     if final_transportation == 'y':
         print ('Great! Let\'s continue!')
     else:
@@ -79,8 +81,22 @@ def day_trip_generator():
     random_destination()
     random_restaurant()
     final_restaurant()
-    random_transportation()
     random_entertainment()
     final_entertainment()
+    random_transportation()
 day_trip_generator()
+
+def day_trip_confirmation():
+    print ('Thank you for using the Day Trip Generator! Let\'s confirm your trip.')
+    print ('Destination: ' + destination)
+    print ('Restaurant: ' + restaurant)
+    print ('Entertainment: ' + entertainment)
+    print ('Mode of Transportation: ' + chosen_transportation)
+    confirmation = input ("Would you like to finalize these details for your upcoming trip? Enter y/n: ")
+    if confirmation == 'y':
+        print ('Your trip to ' + destination + ' is confirmed! You will be arriving by ' + transportation + ' and dining at ' + restaurant + ' after ' + entertainment)
+    else:
+        print ('Oh no! Let\'s try this again!')
+        day_trip_generator()
+day_trip_confirmation()
 
