@@ -43,16 +43,39 @@ def final_restaurant():
         random_restaurant()
         final_restaurant()
 
-random_restaurant()
-final_restaurant()
 
-# def random_transportation():
-#     print ('Generating Mode of Transportation...')
-#     print (random.choice(transportation))
+def random_transportation():
+    print ('Generating Mode of Transportation...')
+    final_transportation = input('I have selected ' + (random.choice(transportation)) + ' as your mode of transportation. Does this sound good? Enter y/n: ')
+    if final_transportation == 'y':
+        print ('Great! Let\'s continue!')
+    else:
+        print ('That is okay. Let\'s try something else.')
+        random_transportation()
 
-# def random_entertainment():
-#     print('Generating your entertainment for today...')
-#     print (random.choice(entertainment))
+def random_entertainment():
+    global entertainment
+    if destination == 'Manitou Springs':
+        entertainment = (random.choice(entertainment_Manitou_Springs))
+        return entertainment
+    elif destination == 'Breckenridge':
+        entertainment = (random.choice(entertainment_Breckenridge))
+        return entertainment
+    else:
+        entertainment = (random.choice(entertainment_Denver))
+        return entertainment
+
+def final_entertainment():
+    print('Generating your entertainment for today...')
+    chosen_entertainment = input ('I have selected ' + entertainment + ' as your activity for today. Does this sound fun? Enter y/n: ')
+    if chosen_entertainment == 'y':
+        print ('Great! Let\'s continue!')
+    else:
+        print ('That is okay. Let\'s try something else.')
+        final_entertainment()
+random_entertainment()
+final_entertainment()
+
 
 # def day_trip_generator():
 #     random_destination()
