@@ -10,18 +10,41 @@ transportation = ['Train', 'Rental Car', 'Bicycle', 'RTD Rail', 'Uber', 'Taxi', 
 import random
 
 def random_destination():
+    global destination
+    destination = (random.choice(destinations))
     print ('Your destination is generating...')
-    final_destination = input('I have selected ' + (random.choice(destinations)) + ' as your destination. Does this sound good? Enter y/n: ')
+    final_destination = input('I have selected ' + destination + ' as your destination. Does this sound good? Enter y/n: ')
     if final_destination == 'y':
         print ('Great! Let\'s continue!')
     else:
         print ('That is okay. Let\'s try something else.')
         random_destination()
- 
+random_destination()
 
-# def random_restaurant():
-#     print ('Get ready for some good food!')
-#     print (random.choice(restaurants))
+def random_restaurant():
+    global restaurant
+    if (destination == 'Manitou Springs'):
+        restaurant = (random.choice(restaurants_Manitou_Springs))
+        return restaurant
+    elif (destination == 'Breckenridge'):
+        restaurant = (random.choice(restaurants_Breckenridge))
+        return restaurant
+    else:
+        restaurant = (random.choice(restaurants_Denver))
+        return restaurant
+
+def final_restaurant():
+    print ('Get ready for some good food!')
+    chosen_restaurant = input('I have selected ' + (restaurant) + ' as your restaurant. Does this sound good? Enter y/n: ')
+    if chosen_restaurant == 'y':
+        print ('Great! Let\'s continue!')
+    else:
+        print ('That is okay. Let\'s try something else.')
+        random_restaurant()
+        final_restaurant()
+
+random_restaurant()
+final_restaurant()
 
 # def random_transportation():
 #     print ('Generating Mode of Transportation...')
