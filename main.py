@@ -94,7 +94,7 @@ def day_trip_confirmation():
     print ('Mode of Transportation: ' + chosen_transportation)
     confirmation = input ("Would you like to finalize these details for your upcoming trip? Enter y/n: ")
     if confirmation == 'y':
-        print ('Your trip to ' + destination + ' is confirmed! You will be arriving by ' + transportation + ' and dining at ' + restaurant + ' after ' + entertainment)
+        print ('Your trip to ' + destination + ' is confirmed! You will be arriving by ' + chosen_transportation + ' and dining at ' + restaurant + ' after ' + entertainment + '!')
     else:
         print ('Oh no! Let\'s try this again!')
         day_trip_generator()
