@@ -19,7 +19,6 @@ def random_destination():
     else:
         print ('That is okay. Let\'s try something else.')
         random_destination()
-random_destination()
 
 def random_restaurant():
     global restaurant
@@ -72,14 +71,16 @@ def final_entertainment():
         print ('Great! Let\'s continue!')
     else:
         print ('That is okay. Let\'s try something else.')
+        random_entertainment()
         final_entertainment()
-random_entertainment()
-final_entertainment()
 
 
-# def day_trip_generator():
-#     random_destination()
-#     random_restaurant()
-#     random_transportation()
-#     random_entertainment()
-# day_trip_generator()
+def day_trip_generator():
+    random_destination()
+    random_restaurant()
+    final_restaurant()
+    random_transportation()
+    random_entertainment()
+    final_entertainment()
+day_trip_generator()
+
