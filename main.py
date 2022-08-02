@@ -18,6 +18,7 @@ def random_destination():
         print ('Great! Let\'s continue!')
     else:
         print ('That is okay. Let\'s try something else.')
+        declined_destination = destinations.remove(destination)
         random_destination()
 
 def random_restaurant():
@@ -39,6 +40,7 @@ def final_restaurant():
         print ('Great! Let\'s continue!')
     else:
         print ('That is okay. Let\'s try something else.')
+        declined_restaurant = restaurants_Breckenridge.remove(restaurant) or restaurants_Denver.remove(restaurant) or restaurants_Manitou_Springs.remove(restaurant)
         random_restaurant()
         final_restaurant()
 
